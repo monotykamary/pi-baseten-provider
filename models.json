@@ -1,0 +1,180 @@
+[
+  {
+    "id": "deepseek-ai/DeepSeek-V3.1",
+    "name": "DeepSeek V3.1",
+    "reasoning": true,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 0.5,
+      "output": 1.5,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 163840,
+    "maxTokens": 131072,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    }
+  },
+  {
+    "id": "zai-org/GLM-4.7",
+    "name": "GLM 4.7",
+    "reasoning": true,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 0.12,
+      "output": 2.2,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 200000,
+    "maxTokens": 200000,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    }
+  },
+  {
+    "id": "zai-org/GLM-5",
+    "name": "GLM 5",
+    "reasoning": true,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 0.95,
+      "output": 3.15,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 202800,
+    "maxTokens": 202800,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    }
+  },
+  {
+    "id": "moonshotai/Kimi-K2.5",
+    "name": "Kimi K2.5",
+    "reasoning": true,
+    "input": [
+      "text",
+      "image"
+    ],
+    "cost": {
+      "input": 0.6,
+      "output": 3,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 262000,
+    "maxTokens": 262000,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    }
+  },
+  {
+    "id": "moonshotai/Kimi-K2.6",
+    "name": "Kimi K2.6",
+    "reasoning": true,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 0.6,
+      "output": 3,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 262000,
+    "maxTokens": 262000,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    }
+  },
+  {
+    "id": "MiniMaxAI/MiniMax-M2.5",
+    "name": "Minimax M2.5",
+    "reasoning": true,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 0.06,
+      "output": 1.2,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 204000,
+    "maxTokens": 204000,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    }
+  },
+  {
+    "id": "nvidia/Nemotron-120B-A12B",
+    "name": "Nemotron Super",
+    "reasoning": true,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 0.06,
+      "output": 0.75,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 202800,
+    "maxTokens": 202800,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    }
+  },
+  {
+    "id": "openai/gpt-oss-120b",
+    "name": "OpenAI GPT 120B",
+    "reasoning": true,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 0.1,
+      "output": 0.5,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 128072,
+    "maxTokens": 128072,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai",
+      "supportsReasoningEffort": true
+    }
+  }
+]
