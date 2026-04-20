@@ -100,7 +100,8 @@ Baseten's API follows the OpenAI Chat Completions API:
 
 - **`supportsDeveloperRole: true`** — All models. Baseten supports the `developer` role.
 - **`maxTokensField: "max_completion_tokens"`** — All models. Baseten uses `max_completion_tokens`.
-- **`thinkingFormat: "openai"`** — Reasoning models. Returns thinking in `reasoning_content` field.
+- **`thinkingFormat: "qwen-chat-template"`** — Kimi K2.5/K2.6 and GLM 4.7/5. Reasoning is opt-in on Baseten via `chat_template_kwargs.enable_thinking`. Pi enables this automatically when you set a thinking level (Shift+Tab).
+- **`thinkingFormat: "openai"`** — DeepSeek V3.1, MiniMax M2.5, Nemotron Super. Returns thinking in `reasoning_content` field by default.
 - **`supportsReasoningEffort: true`** — GPT OSS 120B. Supports `reasoning_effort` parameter.
 - **`supportsStore: false`** — All models. Baseten doesn't support the `store` parameter.
 
@@ -110,6 +111,7 @@ The `patch.json` file contains overrides that are applied on top of `models.json
 - Marking models as reasoning-capable when the API features list doesn't include it
 - Filling in pricing for models where the API returns empty values (e.g. new/unlisted models)
 - Adding compat settings that the API doesn't provide
+- Setting `thinkingFormat: "qwen-chat-template"` for models that require `chat_template_kwargs` to enable reasoning (Kimi K2.5/K2.6, GLM 4.7/5)
 
 ## Updating Models
 

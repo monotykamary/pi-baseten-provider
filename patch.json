@@ -4,16 +4,28 @@
     "cost": {
       "input": 0.6,
       "output": 3.0
+    },
+    "compat": {
+      "thinkingFormat": "qwen-chat-template"
     }
   },
   "moonshotai/Kimi-K2.5": {
-    "reasoning": true
+    "reasoning": true,
+    "compat": {
+      "thinkingFormat": "qwen-chat-template"
+    }
   },
   "zai-org/GLM-4.7": {
-    "reasoning": true
+    "reasoning": true,
+    "compat": {
+      "thinkingFormat": "qwen-chat-template"
+    }
   },
   "zai-org/GLM-5": {
-    "reasoning": true
+    "reasoning": true,
+    "compat": {
+      "thinkingFormat": "qwen-chat-template"
+    }
   },
   "nvidia/Nemotron-120B-A12B": {
     "reasoning": true
