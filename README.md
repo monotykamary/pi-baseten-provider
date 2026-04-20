@@ -1,6 +1,6 @@
 # pi-baseten-provider
 
-A [pi](https://github.com/marioechr/pi) extension that registers [Baseten](https://baseten.co/) as a custom provider. Access DeepSeek, Kimi, GLM, MiniMax, Nemotron, and GPT-OSS models through Baseten's OpenAI-compatible Model API.
+A [pi](https://github.com/badlogic/pi-mono) extension that registers [Baseten](https://baseten.co/) as a custom provider. Access DeepSeek, Kimi, GLM, MiniMax, Nemotron, and GPT-OSS models through Baseten's OpenAI-compatible Model API.
 
 ## Features
 
