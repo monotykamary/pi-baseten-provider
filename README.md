@@ -8,7 +8,7 @@ A [pi](https://github.com/badlogic/pi-mono) extension that registers [Baseten](h
 - **OpenAI-Compatible API** — Just change the base URL and API key
 - **Cost Tracking** — Per-model pricing for budget management
 - **Reasoning Models** — Extended thinking via `reasoning_content` field
-- **Vision Support** — Image input on Kimi K2.5
+- **Vision Support** — Image input on Kimi K2.5 and Kimi K2.6
 - **Reasoning Effort** — Control reasoning depth on GPT OSS 120B
 
 ## Installation
@@ -55,7 +55,7 @@ Get your API key at [app.baseten.co/settings/api_keys](https://app.baseten.co/se
 | GLM 4.7 | 200K | ❌ | ✅ | $0.12 | $2.20 |
 | GLM 5 | 203K | ❌ | ✅ | $0.95 | $3.15 |
 | Kimi K2.5 | 262K | ✅ | ✅ | $0.60 | $3.00 |
-| Kimi K2.6 | 262K | ❌ | ✅ | $0.60 | $3.00 |
+| Kimi K2.6 | 262K | ✅ | ✅ | $0.60 | $3.00 |
 | Minimax M2.5 | 204K | ❌ | ✅ | $0.06 | $1.20 |
 | Nemotron Super | 203K | ❌ | ✅ | $0.06 | $0.75 |
 | OpenAI GPT 120B | 128K | ❌ | ✅ | $0.10 | $0.50 |
