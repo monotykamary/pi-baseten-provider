@@ -23,11 +23,14 @@ pi install git:github.com/monotykamary/pi-baseten-provider
 
 Then set your API key and run pi:
 ```bash
+# Recommended: add to auth.json
+# See Authentication section below
+
+# Or set as environment variable
 export BASETEN_API_KEY=your-api-key-here
+
 pi
 ```
-
-Get your API key at [app.baseten.co/settings/api_keys](https://app.baseten.co/settings/api_keys).
 
 ### Option 2: Manual Clone
 
@@ -39,6 +42,10 @@ Get your API key at [app.baseten.co/settings/api_keys](https://app.baseten.co/se
 
 2. Set your Baseten API key:
    ```bash
+   # Recommended: add to auth.json
+   # See Authentication section below
+
+   # Or set as environment variable
    export BASETEN_API_KEY=your-api-key-here
    ```
 
@@ -76,11 +83,25 @@ Or start pi directly with a Baseten model:
 pi --provider baseten --model deepseek-ai/DeepSeek-V3.1
 ```
 
+## Authentication
+
+The Baseten API key can be configured in multiple ways (resolved in this order):
+
+1. **`auth.json`** (recommended) — Add to `~/.pi/agent/auth.json`:
+   ```json
+   { "baseten": { "type": "api_key", "key": "your-api-key" } }
+   ```
+   The `key` field supports literal values, env var names, and shell commands (prefix with `!`). See [pi's auth file docs](https://github.com/badlogic/pi-mono) for details.
+2. **Runtime override** — Use the `--api-key` CLI flag
+3. **Environment variable** — Set `BASETEN_API_KEY`
+
+Get your API key at [app.baseten.co/settings/api_keys](https://app.baseten.co/settings/api_keys).
+
 ## Environment Variables
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `BASETEN_API_KEY` | Yes | Your Baseten API key |
+| `BASETEN_API_KEY` | No | Your Baseten API key (fallback if not in auth.json) |
 
 ## Configuration
 
