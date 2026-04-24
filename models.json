@@ -40,7 +40,7 @@
       "supportsDeveloperRole": true,
       "supportsStore": false,
       "maxTokensField": "max_completion_tokens",
-      "thinkingFormat": "qwen-chat-template"
+      "thinkingFormat": "openai"
     }
   },
   {
@@ -62,7 +62,7 @@
       "supportsDeveloperRole": true,
       "supportsStore": false,
       "maxTokensField": "max_completion_tokens",
-      "thinkingFormat": "qwen-chat-template"
+      "thinkingFormat": "openai"
     }
   },
   {
@@ -85,7 +85,7 @@
       "supportsDeveloperRole": true,
       "supportsStore": false,
       "maxTokensField": "max_completion_tokens",
-      "thinkingFormat": "qwen-chat-template"
+      "thinkingFormat": "openai"
     }
   },
   {
