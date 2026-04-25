@@ -24,7 +24,7 @@
   {
     "id": "zai-org/GLM-4.7",
     "name": "GLM 4.7",
-    "reasoning": true,
+    "reasoning": false,
     "input": [
       "text"
     ],
@@ -46,7 +46,7 @@
   {
     "id": "zai-org/GLM-5",
     "name": "GLM 5",
-    "reasoning": true,
+    "reasoning": false,
     "input": [
       "text"
     ],
@@ -68,7 +68,7 @@
   {
     "id": "moonshotai/Kimi-K2.5",
     "name": "Kimi K2.5",
-    "reasoning": true,
+    "reasoning": false,
     "input": [
       "text",
       "image"
@@ -97,8 +97,8 @@
       "image"
     ],
     "cost": {
-      "input": 0.6,
-      "output": 3,
+      "input": 0.95,
+      "output": 4,
       "cacheRead": 0,
       "cacheWrite": 0
     },
@@ -136,7 +136,7 @@
   {
     "id": "nvidia/Nemotron-120B-A12B",
     "name": "Nemotron Super",
-    "reasoning": true,
+    "reasoning": false,
     "input": [
       "text"
     ],
