@@ -59,12 +59,12 @@ pi
 | Model | Context | Vision | Reasoning | Input $/M | Output $/M |
 |-------|---------|--------|-----------|-----------|------------|
 | DeepSeek V3.1 | 164K | ❌ | ✅ | $0.50 | $1.50 |
-| GLM 4.7 | 200K | ❌ | ✅ | $0.12 | $2.20 |
-| GLM 5 | 203K | ❌ | ✅ | $0.95 | $3.15 |
-| Kimi K2.5 | 262K | ✅ | ✅ | $0.60 | $3.00 |
-| Kimi K2.6 | 262K | ✅ | ✅ | $0.60 | $3.00 |
+| GLM 4.7 | 200K | ❌ | ❌ | $0.12 | $2.20 |
+| GLM 5 | 203K | ❌ | ❌ | $0.95 | $3.15 |
+| Kimi K2.5 | 262K | ✅ | ❌ | $0.60 | $3.00 |
+| Kimi K2.6 | 262K | ✅ | ✅ | $0.95 | $4.00 |
 | Minimax M2.5 | 204K | ❌ | ✅ | $0.06 | $1.20 |
-| Nemotron Super | 203K | ❌ | ✅ | $0.06 | $0.75 |
+| Nemotron Super | 203K | ❌ | ❌ | $0.06 | $0.75 |
 | OpenAI GPT 120B | 128K | ❌ | ✅ | $0.10 | $0.50 |
 
 *Costs are per million tokens. Prices subject to change — check [baseten.co/pricing](https://www.baseten.co/pricing/) for current pricing.*
