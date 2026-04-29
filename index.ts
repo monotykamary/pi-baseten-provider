@@ -228,6 +228,7 @@ export default function (pi: ExtensionAPI) {
         pi.registerProvider("baseten", {
           baseUrl: BASE_URL,
           apiKey: "BASETEN_API_KEY",
+          api: "openai-completions",
           models: applyPatch(freshBase, patchData as PatchData),
         });
       }
