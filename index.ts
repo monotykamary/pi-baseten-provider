@@ -225,7 +225,11 @@ export default function (pi: ExtensionAPI) {
     await resolveApiKey(ctx.modelRegistry);
     revalidateModels(cachedApiKey, embeddedModels).then((freshBase) => {
       if (freshBase) {
-        pi.registerProvider("baseten", { models: applyPatch(freshBase, patchData as PatchData) });
+        pi.registerProvider("baseten", {
+          baseUrl: BASE_URL,
+          apiKey: "BASETEN_API_KEY",
+          models: applyPatch(freshBase, patchData as PatchData),
+        });
       }
     });
   });
