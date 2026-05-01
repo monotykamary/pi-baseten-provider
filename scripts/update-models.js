@@ -10,6 +10,12 @@
  * context lengths, and supported features. Pricing is converted from per-token
  * to per-million-tokens for pi.
  *
+ * models.json is the source of truth for curated specs — the script preserves
+ * existing data and only adds new models with API-derived defaults.
+ * Curate models.json manually after new model discovery.
+ *
+ * patch.json is applied at runtime by the provider — not baked into models.json.
+ *
  * Requires BASETEN_API_KEY environment variable.
  */
 
@@ -22,21 +28,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const MODELS_API_URL = 'https://inference.baseten.co/v1/models';
 const MODELS_JSON_PATH = path.join(__dirname, '..', 'models.json');
 const README_PATH = path.join(__dirname, '..', 'README.md');
-
-// ─── Default pricing for models where API returns empty pricing ──────────────
-// (e.g. new models with unlisted pricing)
-const PRICING_DEFAULTS = {
-  'moonshotai/Kimi-K2.6':  { input: 0.6, output: 3.0, cacheRead: 0 },
-  'moonshotai/Kimi-K2.5':  { input: 0.6, output: 3.0, cacheRead: 0 },
-  'zai-org/GLM-4.7':       { input: 0.12, output: 2.2, cacheRead: 0 },
-  'zai-org/GLM-5':         { input: 0.95, output: 3.15, cacheRead: 0 },
-  'MiniMaxAI/MiniMax-M2.5': { input: 0.06, output: 1.2, cacheRead: 0 },
-  'nvidia/Nemotron-120B-A12B': { input: 0.06, output: 0.75, cacheRead: 0 },
-  'openai/gpt-oss-120b':   { input: 0.1, output: 0.5, cacheRead: 0 },
-  'deepseek-ai/DeepSeek-V3.1': { input: 0.5, output: 1.5, cacheRead: 0 },
-};
-
-const DEFAULT_PRICING = { input: 0.5, output: 2.0, cacheRead: 0 };
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -87,7 +78,7 @@ async function fetchModels() {
 function transformApiModel(apiModel, existingModelsMap) {
   const id = apiModel.id;
 
-  // Start from existing model data if we have it (preserves pricing, compat, etc.)
+  // Preserve existing curated data (pricing, reasoning, compat, etc.)
   if (existingModelsMap[id]) {
     const existing = { ...existingModelsMap[id] };
     // Update context window from API if changed
@@ -113,7 +104,7 @@ function transformApiModel(apiModel, existingModelsMap) {
     return existing;
   }
 
-  // New model — build from API data + defaults
+  // New model — build from API data + sensible defaults
   const features = apiModel.supported_features || [];
   const pricing = apiModel.pricing || {};
   const hasReasoning = features.includes('reasoning');
@@ -123,13 +114,8 @@ function transformApiModel(apiModel, existingModelsMap) {
   if (hasVision) inputTypes.push('image');
 
   // Convert pricing from per-token to per-million
-  let inputCost = toPerMillion(pricing.prompt);
-  let outputCost = toPerMillion(pricing.completion);
-
-  // Use defaults if API returned empty/zero pricing
-  const defaults = PRICING_DEFAULTS[id] || DEFAULT_PRICING;
-  if (inputCost === null || inputCost === 0) inputCost = defaults.input;
-  if (outputCost === null || outputCost === 0) outputCost = defaults.output;
+  let inputCost = toPerMillion(pricing.prompt) || 0;
+  let outputCost = toPerMillion(pricing.completion) || 0;
 
   const model = {
     id,
@@ -139,7 +125,7 @@ function transformApiModel(apiModel, existingModelsMap) {
     cost: {
       input: inputCost,
       output: outputCost,
-      cacheRead: defaults.cacheRead || 0,
+      cacheRead: 0,
       cacheWrite: 0,
     },
     contextWindow: apiModel.context_length || 131072,
@@ -228,7 +214,7 @@ async function main() {
   try {
     const apiModels = await fetchModels();
 
-    // Load existing models.json for pricing/compat preservation
+    // Load existing models.json — source of truth for curated specs
     const existingModels = loadJson(MODELS_JSON_PATH);
     const existingModelsMap = {};
     for (const m of (Array.isArray(existingModels) ? existingModels : [])) {
@@ -241,7 +227,6 @@ async function main() {
     );
 
     // Keep models from models.json that are NOT in the API response
-    // (e.g. models still available but not yet listed)
     const apiIds = new Set(apiModels.map(m => m.id));
     for (const existing of Object.values(existingModelsMap)) {
       if (!apiIds.has(existing.id)) {
@@ -268,7 +253,7 @@ async function main() {
     console.log(`Total models: ${models.length}`);
     console.log(`Reasoning models: ${models.filter(m => m.reasoning).length}`);
     console.log(`Vision models: ${models.filter(m => m.input.includes('image')).length}`);
-    if (added.length > 0) console.log(`New models: ${added.join(', ')}`);
+    if (added.length > 0) console.log(`New models: ${added.join(', ')} — curate models.json manually`);
     if (removed.length > 0) console.log(`Removed models: ${removed.join(', ')}`);
 
   } catch (error) {
