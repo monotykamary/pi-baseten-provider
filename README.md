@@ -59,13 +59,13 @@ pi
 | Model | Context | Vision | Reasoning | Input $/M | Output $/M |
 |-------|---------|--------|-----------|-----------|------------|
 | DeepSeek V3.1 | 164K | ❌ | ✅ | $0.50 | $1.50 |
-| Deepseek V4 Pro | 131K | ❌ | ✅ | $1.74 | $3.48 |
-| GLM 4.7 | 200K | ❌ | ❌ | $0.12 | $2.20 |
-| GLM 5 | 203K | ❌ | ❌ | $0.95 | $3.15 |
-| Kimi K2.5 | 262K | ✅ | ❌ | $0.60 | $3.00 |
-| Kimi K2.6 | 262K | ✅ | ✅ | $0.95 | $4.00 |
+| DeepSeek V4 Pro | 131K | ❌ | ✅ | $1.74 | $3.48 |
+| GLM 4.7 | 200K | ❌ | ✅ | $0.12 | $2.20 |
+| GLM 5 | 203K | ❌ | ✅ | $0.95 | $3.15 |
+| Kimi K2.5 | 262K | ✅ | ✅ | $0.60 | $3.00 |
+| Kimi K2.6 | 262K | ✅ | ✅ | $0.60 | $3.00 |
 | Minimax M2.5 | 204K | ❌ | ✅ | $0.06 | $1.20 |
-| Nemotron Super | 203K | ❌ | ❌ | $0.06 | $0.75 |
+| Nemotron Super | 203K | ❌ | ✅ | $0.06 | $0.75 |
 | OpenAI GPT 120B | 128K | ❌ | ✅ | $0.10 | $0.50 |
 
 *Costs are per million tokens. Prices subject to change — check [baseten.co/pricing](https://www.baseten.co/pricing/) for current pricing.*
@@ -134,6 +134,12 @@ The `patch.json` file contains overrides that are applied on top of `models.json
 - Filling in pricing for models where the API returns empty values (e.g. new/unlisted models)
 - Adding compat settings that the API doesn't provide
 - Setting `thinkingFormat: "qwen-chat-template"` for models that require `chat_template_kwargs` to enable reasoning (Kimi K2.5/K2.6, GLM 4.7/5)
+
+### Custom Models
+
+The `custom-models.json` file contains full model definitions for models that need manual curation beyond what the API provides, or models not yet available from the API. These are merged in after patch application, taking precedence for matching IDs.
+
+Merge order: `[live|cache|embedded] → patch.json → custom-models.json`
 
 ## Updating Models
 

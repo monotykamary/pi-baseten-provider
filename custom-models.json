@@ -1,0 +1,24 @@
+[
+  {
+    "id": "deepseek-ai/DeepSeek-V4-Pro",
+    "name": "DeepSeek V4 Pro",
+    "reasoning": true,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 1.74,
+      "output": 3.48,
+      "cacheRead": 0.15,
+      "cacheWrite": 0
+    },
+    "contextWindow": 131000,
+    "maxTokens": 131000,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    }
+  }
+]
