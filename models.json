@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "deepseek-ai/DeepSeek-V4-Pro",
+    "name": "Deepseek V4 Pro",
+    "reasoning": true,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 1.74,
+      "output": 3.48,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 131000,
+    "maxTokens": 131000,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    }
+  },
+  {
     "id": "zai-org/GLM-4.7",
     "name": "GLM 4.7",
     "reasoning": false,
