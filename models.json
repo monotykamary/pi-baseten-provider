@@ -158,7 +158,7 @@
   {
     "id": "nvidia/Nemotron-120B-A12B",
     "name": "Nemotron Super",
-    "reasoning": false,
+    "reasoning": true,
     "input": [
       "text"
     ],
