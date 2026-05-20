@@ -18,7 +18,7 @@ A [pi](https://github.com/badlogic/pi-mono) extension that registers [Baseten](h
 Install directly from GitHub:
 
 ```bash
-pi install git:github.com/monotykamary/pi-baseten-provider
+pi install https://github.com/monotykamary/pi-baseten-provider
 ```
 
 Then set your API key and run pi:
