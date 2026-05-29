@@ -278,7 +278,7 @@ export default function (pi: ExtensionAPI) {
 
   pi.registerProvider("baseten", {
     baseUrl: BASE_URL,
-    apiKey: "BASETEN_API_KEY",
+    apiKey: "$BASETEN_API_KEY",
     api: "openai-completions",
     models: staleModels,
   });
@@ -292,7 +292,7 @@ export default function (pi: ExtensionAPI) {
         if (freshBase && !signal.aborted) {
           pi.registerProvider("baseten", {
             baseUrl: BASE_URL,
-            apiKey: "BASETEN_API_KEY",
+            apiKey: "$BASETEN_API_KEY",
             api: "openai-completions",
             models: buildModels(freshBase, customModels, patches),
           });
