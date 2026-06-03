@@ -1,6 +1,17 @@
-# pi-baseten-provider
+<div align="center">
 
-A [pi](https://github.com/badlogic/pi-mono) extension that registers [Baseten](https://baseten.co/) as a custom provider. Access DeepSeek, Kimi, GLM, MiniMax, Nemotron, and GPT-OSS models through Baseten's OpenAI-compatible Model API.
+# 🅱️ pi-baseten-provider
+
+**DeepSeek, Kimi, GLM & more through [Baseten](https://baseten.co/)**
+
+_A [pi](https://github.com/earendil-works/pi-coding-agent) provider extension for Baseten's OpenAI-compatible Model API._
+
+[![pi extension](https://img.shields.io/badge/pi-extension-blueviolet)](https://github.com/earendil-works/pi-coding-agent)
+[![license](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
+
+</div>
+
+---
 
 ## Features
 
