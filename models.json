@@ -29,7 +29,7 @@
       "text"
     ],
     "cost": {
-      "input": 0.12,
+      "input": 0.6,
       "output": 2.2,
       "cacheRead": 0,
       "cacheWrite": 0
@@ -94,7 +94,7 @@
       "text"
     ],
     "cost": {
-      "input": 0.3,
+      "input": 1.5,
       "output": 4.5,
       "cacheRead": 0,
       "cacheWrite": 0
@@ -162,7 +162,7 @@
       "text"
     ],
     "cost": {
-      "input": 0.16,
+      "input": 0.95,
       "output": 4,
       "cacheRead": 0,
       "cacheWrite": 0
@@ -184,7 +184,7 @@
       "text"
     ],
     "cost": {
-      "input": 0.06,
+      "input": 0.3,
       "output": 0.75,
       "cacheRead": 0,
       "cacheWrite": 0
