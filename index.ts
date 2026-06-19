@@ -48,6 +48,13 @@ interface JsonModel {
   };
   contextWindow: number;
   maxTokens: number;
+  thinkingLevelMap?: {
+    minimal?: string | null;
+    low?: string | null;
+    medium?: string | null;
+    high?: string | null;
+    xhigh?: string | null;
+  };
   compat?: {
     supportsDeveloperRole?: boolean;
     supportsStore?: boolean;
@@ -69,6 +76,7 @@ interface PatchEntry {
   };
   contextWindow?: number;
   maxTokens?: number;
+  thinkingLevelMap?: Record<string, string | null>;
   compat?: Record<string, unknown>;
 }
 
@@ -84,6 +92,7 @@ function applyPatch(model: JsonModel, patch: PatchEntry): JsonModel {
   if (patch.input !== undefined) result.input = patch.input;
   if (patch.contextWindow !== undefined) result.contextWindow = patch.contextWindow;
   if (patch.maxTokens !== undefined) result.maxTokens = patch.maxTokens;
+  if (patch.thinkingLevelMap !== undefined) result.thinkingLevelMap = patch.thinkingLevelMap as JsonModel["thinkingLevelMap"];
 
   if (patch.cost) {
     result.cost = {
@@ -99,6 +108,9 @@ function applyPatch(model: JsonModel, patch: PatchEntry): JsonModel {
 
   if (!result.reasoning && result.compat?.thinkingFormat) {
     delete result.compat.thinkingFormat;
+  }
+  if (!result.reasoning && result.thinkingLevelMap) {
+    delete result.thinkingLevelMap;
   }
   if (result.compat && Object.keys(result.compat).length === 0) {
     delete result.compat;

@@ -27,6 +27,24 @@
       "thinkingFormat": "qwen-chat-template"
     }
   },
+  "zai-org/GLM-5.2": {
+    "thinkingLevelMap": {
+      "minimal": "minimal",
+      "low": "low",
+      "medium": "medium",
+      "high": "high",
+      "xhigh": "max"
+    }
+  },
+  "moonshotai/Kimi-K2.7-Code": {
+    "thinkingLevelMap": {
+      "minimal": null,
+      "low": "low",
+      "medium": "medium",
+      "high": "high",
+      "xhigh": null
+    }
+  },
   "nvidia/Nemotron-120B-A12B": {
     "reasoning": true
   }
