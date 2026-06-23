@@ -28,6 +28,9 @@
     }
   },
   "zai-org/GLM-5.2": {
+    "compat": {
+      "thinkingFormat": "qwen-chat-template"
+    },
     "thinkingLevelMap": {
       "minimal": "minimal",
       "low": "low",
