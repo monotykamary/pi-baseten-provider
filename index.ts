@@ -165,7 +165,10 @@ function transformApiModel(apiModel: any): JsonModel | null {
   const features: string[] = apiModel.supported_features || [];
   const hasVision = (apiModel.input_modalities || []).includes("image");
   const pricing = apiModel.pricing || {};
-  const toPerM = (v: any) => (typeof v === "string" ? parseFloat(v) : (v || 0)) * 1_000_000;
+  // API returns per-token pricing; convert to $/M and round to 6 decimals.
+  // The ×1e6 multiply produces float noise (e.g. 0.7000000000000001); rounding to
+  // 6 decimals normalizes it and preserves sub-cent cache prices like 0.003.
+  const toPerM = (v: any) => Math.round((typeof v === "string" ? parseFloat(v) : (v || 0)) * 1_000_000 * 1e6) / 1e6;
   const model: JsonModel = {
     id: apiModel.id,
     name: apiModel.name || apiModel.id,
