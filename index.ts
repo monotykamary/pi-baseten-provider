@@ -53,6 +53,7 @@ interface JsonModel {
     medium?: string | null;
     high?: string | null;
     xhigh?: string | null;
+    max?: string | null;
   };
   compat?: {
     supportsDeveloperRole?: boolean;
