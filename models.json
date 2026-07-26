@@ -44,49 +44,6 @@
     }
   },
   {
-    "id": "zai-org/GLM-5",
-    "name": "GLM 5",
-    "reasoning": false,
-    "input": [
-      "text"
-    ],
-    "cost": {
-      "input": 0.95,
-      "output": 3.15,
-      "cacheRead": 0,
-      "cacheWrite": 0
-    },
-    "contextWindow": 202800,
-    "maxTokens": 202800,
-    "compat": {
-      "supportsDeveloperRole": true,
-      "supportsStore": false,
-      "maxTokensField": "max_completion_tokens",
-      "thinkingFormat": "openai"
-    }
-  },
-  {
-    "id": "zai-org/GLM-5.1",
-    "name": "GLM 5.1",
-    "reasoning": false,
-    "input": [
-      "text"
-    ],
-    "cost": {
-      "input": 1.3,
-      "output": 4.3,
-      "cacheRead": 0,
-      "cacheWrite": 0
-    },
-    "contextWindow": 202800,
-    "maxTokens": 202800,
-    "compat": {
-      "supportsDeveloperRole": true,
-      "supportsStore": false,
-      "maxTokensField": "max_completion_tokens"
-    }
-  },
-  {
     "id": "zai-org/GLM-5.2",
     "name": "GLM 5.2",
     "reasoning": true,
@@ -153,29 +110,6 @@
     }
   },
   {
-    "id": "moonshotai/Kimi-K2.5",
-    "name": "Kimi K2.5",
-    "reasoning": false,
-    "input": [
-      "text",
-      "image"
-    ],
-    "cost": {
-      "input": 0.6,
-      "output": 3,
-      "cacheRead": 0,
-      "cacheWrite": 0
-    },
-    "contextWindow": 262000,
-    "maxTokens": 262000,
-    "compat": {
-      "supportsDeveloperRole": true,
-      "supportsStore": false,
-      "maxTokensField": "max_completion_tokens",
-      "thinkingFormat": "openai"
-    }
-  },
-  {
     "id": "moonshotai/Kimi-K2.6",
     "name": "Kimi K2.6",
     "reasoning": true,
@@ -213,28 +147,6 @@
     },
     "contextWindow": 262000,
     "maxTokens": 262000,
-    "compat": {
-      "supportsDeveloperRole": true,
-      "supportsStore": false,
-      "maxTokensField": "max_completion_tokens",
-      "thinkingFormat": "openai"
-    }
-  },
-  {
-    "id": "nvidia/Nemotron-120B-A12B",
-    "name": "Nemotron Super",
-    "reasoning": true,
-    "input": [
-      "text"
-    ],
-    "cost": {
-      "input": 0.3,
-      "output": 0.75,
-      "cacheRead": 0,
-      "cacheWrite": 0
-    },
-    "contextWindow": 202800,
-    "maxTokens": 202800,
     "compat": {
       "supportsDeveloperRole": true,
       "supportsStore": false,
