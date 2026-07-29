@@ -36,6 +36,7 @@
   "files": [
     "index.ts",
     "models.json",
+    "deprecated-models.json",
     "custom-models.json",
     "patch.json",
     "scripts/update-models.js"
