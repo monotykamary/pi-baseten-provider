@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "thinkingmachines/inkling-small",
+    "name": "Inkling Small",
+    "reasoning": true,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 1048576,
+    "maxTokens": 32768,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    }
+  },
+  {
     "id": "moonshotai/Kimi-K2.6",
     "name": "Kimi K2.6",
     "reasoning": true,
