@@ -96,16 +96,17 @@ function transformApiModel(apiModel, existingModelsMap) {
     }
     // Update features from API
     const features = apiModel.supported_features || [];
-    existing.reasoning = features.includes('reasoning') ?? existing.reasoning;
-    if (features.includes('vision') && !existing.input.includes('image')) {
-      existing.input = ['text', 'image'];
-    }
+    existing.reasoning = features.includes('reasoning');
+    const hasVision = (apiModel.input_modalities || []).includes('image');
+    existing.input = hasVision ? ['text', 'image'] : ['text'];
     // Update pricing from API
     const pricing = apiModel.pricing || {};
     const inputCost = toPerMillion(pricing.prompt);
     const outputCost = toPerMillion(pricing.completion);
-    if (inputCost !== null && inputCost > 0) existing.cost.input = inputCost;
-    if (outputCost !== null && outputCost > 0) existing.cost.output = outputCost;
+    const cacheReadCost = toPerMillion(pricing.input_cache_read ?? pricing.cache_prompt);
+    if (inputCost !== null) existing.cost.input = inputCost;
+    if (outputCost !== null) existing.cost.output = outputCost;
+    if (cacheReadCost !== null) existing.cost.cacheRead = cacheReadCost;
     return existing;
   }
 
@@ -113,7 +114,7 @@ function transformApiModel(apiModel, existingModelsMap) {
   const features = apiModel.supported_features || [];
   const pricing = apiModel.pricing || {};
   const hasReasoning = features.includes('reasoning');
-  const hasVision = features.includes('vision');
+  const hasVision = (apiModel.input_modalities || []).includes('image');
 
   const inputTypes = ['text'];
   if (hasVision) inputTypes.push('image');
@@ -130,7 +131,7 @@ function transformApiModel(apiModel, existingModelsMap) {
     cost: {
       input: inputCost,
       output: outputCost,
-      cacheRead: 0,
+      cacheRead: toPerMillion(pricing.input_cache_read ?? pricing.cache_prompt) || 0,
       cacheWrite: 0,
     },
     contextWindow: apiModel.context_length || 131072,

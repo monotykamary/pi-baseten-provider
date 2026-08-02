@@ -49,6 +49,7 @@ interface JsonModel {
   contextWindow: number;
   maxTokens: number;
   thinkingLevelMap?: {
+    off?: string | null;
     minimal?: string | null;
     low?: string | null;
     medium?: string | null;
@@ -60,8 +61,10 @@ interface JsonModel {
     supportsDeveloperRole?: boolean;
     supportsStore?: boolean;
     maxTokensField?: "max_completion_tokens" | "max_tokens";
-    thinkingFormat?: "openai" | "zai" | "qwen" | "qwen-chat-template";
+    thinkingFormat?: "openai" | "zai" | "qwen" | "qwen-chat-template" | "chat-template";
     supportsReasoningEffort?: boolean;
+    requiresReasoningContentOnAssistantMessages?: boolean;
+    chatTemplateKwargs?: Record<string, unknown>;
   };
 }
 
@@ -181,15 +184,18 @@ function transformApiModel(apiModel: any): JsonModel | null {
     cost: {
       input: toPerM(pricing.prompt),
       output: toPerM(pricing.completion),
-      cacheRead: toPerM(pricing.cache_prompt),
+      cacheRead: toPerM(pricing.input_cache_read ?? pricing.cache_prompt),
       cacheWrite: 0,
     },
     contextWindow: apiModel.context_length || 131072,
     maxTokens: apiModel.max_completion_tokens || 131072,
   };
-  if (features.includes("reasoning_effort")) {
-    model.compat = { ...model.compat, supportsReasoningEffort: true };
-  }
+  model.compat = {
+    supportsDeveloperRole: true,
+    supportsStore: false,
+    maxTokensField: "max_completion_tokens",
+    ...(features.includes("reasoning_effort") ? { supportsReasoningEffort: true } : {}),
+  };
   return model;
 }
 

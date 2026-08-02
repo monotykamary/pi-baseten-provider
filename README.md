@@ -69,20 +69,20 @@ pi
 
 | Model | Context | Vision | Reasoning | Input $/M | Output $/M |
 |-------|---------|--------|-----------|-----------|------------|
-| Deepseek V4 Flash 0731 | 1.0M | ❌ | ✅ | Free | Free |
-| DeepSeek V4 Pro | 131K | ❌ | ✅ | $1.74 | $3.48 |
+| Deepseek V4 Flash 0731 | 1.0M | ❌ | ✅ | $0.13 | $0.26 |
+| Deepseek V4 Pro | 262K | ❌ | ✅ | $1.74 | $3.48 |
 | GLM 4.7 | 200K | ❌ | ✅ | $0.60 | $2.20 |
 | GLM 5.2 | 1.0M | ❌ | ✅ | $1.40 | $4.40 |
 | GLM 5.2 Fast | 524K | ❌ | ✅ | $2.10 | $6.60 |
-| Inkling | 1.0M | ❌ | ✅ | $1.00 | $4.05 |
-| Inkling Small | 1.0M | ❌ | ✅ | $0.50 | $1.20 |
-| Kimi K2.6 | 262K | ✅ | ✅ | $0.60 | $3.00 |
-| Kimi K2.7 Code | 262K | ❌ | ✅ | $0.95 | $4.00 |
-| Kimi K3 | 1.0M | ❌ | ✅ | $3.00 | $15.00 |
+| Inkling | 1.0M | ✅ | ✅ | $1.00 | $4.05 |
+| Inkling Small | 1.0M | ✅ | ✅ | $0.50 | $1.20 |
+| Kimi K2.6 | 262K | ✅ | ✅ | $0.95 | $4.00 |
+| Kimi K2.7 Code | 262K | ✅ | ✅ | $0.95 | $4.00 |
+| Kimi K3 | 1.0M | ✅ | ✅ | $3.00 | $15.00 |
 | Mercury 2 | 8K | ❌ | ✅ | Free | Free |
 | Nemotron Ultra | 203K | ❌ | ✅ | $0.60 | $2.40 |
 | OpenAI GPT 120B | 128K | ❌ | ✅ | $0.10 | $0.50 |
-| SID-1 | 33K | ❌ | ✅ | Free | Free |
+| SID-1 | 33K | ❌ | ❌ | Free | Free |
 
 *Costs are per million tokens. Prices subject to change — check [baseten.co/pricing](https://www.baseten.co/pricing/) for current pricing.*
 

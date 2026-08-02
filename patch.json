@@ -1,54 +1,219 @@
 {
-  "moonshotai/Kimi-K2.6": {
-    "reasoning": true,
-    "cost": {
-      "input": 0.6,
-      "output": 3.0
-    },
-    "compat": {
-      "thinkingFormat": "qwen-chat-template"
-    }
-  },
-  "moonshotai/Kimi-K2.5": {
-    "reasoning": true,
-    "compat": {
-      "thinkingFormat": "qwen-chat-template"
-    }
-  },
-  "zai-org/GLM-4.7": {
-    "reasoning": true,
-    "compat": {
-      "thinkingFormat": "qwen-chat-template"
-    }
-  },
-  "zai-org/GLM-5": {
-    "reasoning": true,
-    "compat": {
-      "thinkingFormat": "qwen-chat-template"
-    }
-  },
-  "zai-org/GLM-5.2": {
-    "compat": {
-      "thinkingFormat": "qwen-chat-template"
-    },
+  "deepseek-ai/DeepSeek-V4-Flash-0731": {
     "thinkingLevelMap": {
+      "off": "none",
+      "minimal": null,
+      "low": "low",
+      "medium": null,
+      "high": "high",
+      "xhigh": null,
+      "max": "max"
+    },
+    "compat": {
+      "thinkingFormat": "chat-template",
+      "supportsReasoningEffort": false,
+      "requiresReasoningContentOnAssistantMessages": true,
+      "chatTemplateKwargs": {
+        "thinking": {
+          "$var": "thinking.enabled"
+        },
+        "reasoning_effort": {
+          "$var": "thinking.effort"
+        }
+      }
+    }
+  },
+  "deepseek-ai/DeepSeek-V4-Pro": {
+    "thinkingLevelMap": {
+      "off": "none",
       "minimal": "minimal",
       "low": "low",
       "medium": "medium",
       "high": "high",
+      "xhigh": "xhigh",
       "max": "max"
+    },
+    "compat": {
+      "thinkingFormat": "openai",
+      "supportsReasoningEffort": true,
+      "requiresReasoningContentOnAssistantMessages": true
+    }
+  },
+  "zai-org/GLM-4.7": {
+    "reasoning": true,
+    "thinkingLevelMap": {
+      "off": "none",
+      "minimal": null,
+      "low": null,
+      "medium": null,
+      "high": "high",
+      "xhigh": null,
+      "max": null
+    },
+    "compat": {
+      "thinkingFormat": "qwen-chat-template",
+      "supportsReasoningEffort": false,
+      "requiresReasoningContentOnAssistantMessages": true
+    }
+  },
+  "zai-org/GLM-5.2": {
+    "thinkingLevelMap": {
+      "off": "none",
+      "minimal": null,
+      "low": null,
+      "medium": null,
+      "high": "high",
+      "xhigh": null,
+      "max": "max"
+    },
+    "compat": {
+      "thinkingFormat": "openai",
+      "supportsReasoningEffort": true,
+      "requiresReasoningContentOnAssistantMessages": true
+    }
+  },
+  "zai-org/GLM-5.2-Fast": {
+    "thinkingLevelMap": {
+      "off": "none",
+      "minimal": null,
+      "low": null,
+      "medium": null,
+      "high": "high",
+      "xhigh": null,
+      "max": "max"
+    },
+    "compat": {
+      "thinkingFormat": "openai",
+      "supportsReasoningEffort": true,
+      "requiresReasoningContentOnAssistantMessages": true
+    }
+  },
+  "thinkingmachines/inkling": {
+    "thinkingLevelMap": {
+      "off": "none",
+      "minimal": "minimal",
+      "low": "low",
+      "medium": "medium",
+      "high": "high",
+      "xhigh": "xhigh",
+      "max": "max"
+    },
+    "compat": {
+      "thinkingFormat": "openai",
+      "supportsReasoningEffort": true
+    }
+  },
+  "thinkingmachines/inkling-small": {
+    "thinkingLevelMap": {
+      "off": "none",
+      "minimal": "minimal",
+      "low": "low",
+      "medium": "medium",
+      "high": "high",
+      "xhigh": "xhigh",
+      "max": "max"
+    },
+    "compat": {
+      "thinkingFormat": "openai",
+      "supportsReasoningEffort": true
+    }
+  },
+  "moonshotai/Kimi-K2.6": {
+    "thinkingLevelMap": {
+      "off": "none",
+      "minimal": null,
+      "low": null,
+      "medium": null,
+      "high": "high",
+      "xhigh": null,
+      "max": null
+    },
+    "compat": {
+      "thinkingFormat": "qwen-chat-template",
+      "supportsReasoningEffort": false,
+      "requiresReasoningContentOnAssistantMessages": true
     }
   },
   "moonshotai/Kimi-K2.7-Code": {
     "thinkingLevelMap": {
+      "off": "none",
       "minimal": null,
+      "low": null,
+      "medium": null,
+      "high": "high",
+      "xhigh": null,
+      "max": null
+    },
+    "compat": {
+      "thinkingFormat": "qwen-chat-template",
+      "supportsReasoningEffort": false,
+      "requiresReasoningContentOnAssistantMessages": true
+    }
+  },
+  "moonshotai/Kimi-K3": {
+    "thinkingLevelMap": {
+      "off": "none",
+      "minimal": null,
+      "low": "low",
+      "medium": null,
+      "high": "high",
+      "xhigh": null,
+      "max": "max"
+    },
+    "compat": {
+      "thinkingFormat": "openai",
+      "supportsReasoningEffort": true,
+      "requiresReasoningContentOnAssistantMessages": true
+    }
+  },
+  "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
+    "thinkingLevelMap": {
+      "off": "none",
+      "minimal": null,
+      "low": null,
+      "medium": null,
+      "high": "high",
+      "xhigh": null,
+      "max": null
+    },
+    "compat": {
+      "thinkingFormat": "qwen-chat-template",
+      "supportsReasoningEffort": false,
+      "requiresReasoningContentOnAssistantMessages": true
+    }
+  },
+  "openai/gpt-oss-120b": {
+    "thinkingLevelMap": {
+      "off": "none",
+      "minimal": "minimal",
       "low": "low",
       "medium": "medium",
       "high": "high",
-      "xhigh": null
+      "xhigh": "xhigh",
+      "max": "max"
+    },
+    "compat": {
+      "thinkingFormat": "openai",
+      "supportsReasoningEffort": true
     }
   },
-  "nvidia/Nemotron-120B-A12B": {
-    "reasoning": true
+  "inception/mercury-2": {
+    "reasoning": true,
+    "thinkingLevelMap": {
+      "off": "instant",
+      "minimal": "low",
+      "low": "low",
+      "medium": "medium",
+      "high": "high",
+      "xhigh": null,
+      "max": null
+    },
+    "compat": {
+      "thinkingFormat": "openai",
+      "supportsReasoningEffort": true
+    }
+  },
+  "sid/sid-1": {
+    "reasoning": false
   }
 }
