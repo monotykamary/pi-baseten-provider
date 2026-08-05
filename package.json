@@ -1,6 +1,6 @@
 {
   "name": "pi-baseten-provider",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "packageManager": "pnpm@11.20.0",
   "description": "Baseten provider extension for pi - Access DeepSeek, Kimi, GLM, MiniMax, Nemotron, and GPT-OSS models through the Baseten Model API",
   "author": "monotykamary",

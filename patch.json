@@ -1,5 +1,6 @@
 {
   "deepseek-ai/DeepSeek-V4-Flash-0731": {
+    "maxTokens": 384000,
     "thinkingLevelMap": {
       "off": "none",
       "minimal": null,
