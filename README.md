@@ -79,10 +79,8 @@ pi
 | Kimi K2.6 | 262K | ✅ | ✅ | $0.95 | $4.00 |
 | Kimi K2.7 Code | 262K | ✅ | ✅ | $0.95 | $4.00 |
 | Kimi K3 | 1.0M | ✅ | ✅ | $3.00 | $15.00 |
-| Mercury 2 | 8K | ❌ | ✅ | Free | Free |
 | Nemotron Ultra | 203K | ❌ | ✅ | $0.60 | $2.40 |
 | OpenAI GPT 120B | 128K | ❌ | ✅ | $0.10 | $0.50 |
-| SID-1 | 33K | ❌ | ❌ | Free | Free |
 
 *Costs are per million tokens. Prices subject to change — check [baseten.co/pricing](https://www.baseten.co/pricing/) for current pricing.*
 

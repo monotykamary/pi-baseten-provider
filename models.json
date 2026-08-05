@@ -225,28 +225,6 @@
     }
   },
   {
-    "id": "inception/mercury-2",
-    "name": "Mercury 2",
-    "reasoning": true,
-    "input": [
-      "text"
-    ],
-    "cost": {
-      "input": 0,
-      "output": 0,
-      "cacheRead": 0,
-      "cacheWrite": 0
-    },
-    "contextWindow": 8192,
-    "maxTokens": 5000,
-    "compat": {
-      "supportsDeveloperRole": true,
-      "supportsStore": false,
-      "maxTokensField": "max_completion_tokens",
-      "thinkingFormat": "openai"
-    }
-  },
-  {
     "id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B",
     "name": "Nemotron Ultra",
     "reasoning": true,
@@ -289,28 +267,6 @@
       "maxTokensField": "max_completion_tokens",
       "thinkingFormat": "openai",
       "supportsReasoningEffort": true
-    }
-  },
-  {
-    "id": "sid/sid-1",
-    "name": "SID-1",
-    "reasoning": true,
-    "input": [
-      "text"
-    ],
-    "cost": {
-      "input": 0,
-      "output": 0,
-      "cacheRead": 0,
-      "cacheWrite": 0
-    },
-    "contextWindow": 32768,
-    "maxTokens": 5000,
-    "compat": {
-      "supportsDeveloperRole": true,
-      "supportsStore": false,
-      "maxTokensField": "max_completion_tokens",
-      "thinkingFormat": "openai"
     }
   }
 ]

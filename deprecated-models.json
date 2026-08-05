@@ -1,1 +1,48 @@
-{}
+{
+  "inception/mercury-2": {
+    "id": "inception/mercury-2",
+    "name": "Mercury 2",
+    "reasoning": true,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 8192,
+    "maxTokens": 5000,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    },
+    "deprecatedAt": "2026-08-05T02:00:12.114Z"
+  },
+  "sid/sid-1": {
+    "id": "sid/sid-1",
+    "name": "SID-1",
+    "reasoning": true,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 32768,
+    "maxTokens": 5000,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    },
+    "deprecatedAt": "2026-08-05T02:00:12.114Z"
+  }
+}
