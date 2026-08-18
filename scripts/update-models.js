@@ -340,15 +340,15 @@ function formatContext(n) {
 }
 
 function formatCost(cost) {
-  if (cost === 0) return 'Free';
-  if (cost === null || cost === undefined) return '-';
-  return `$${cost.toFixed(2)}`;
+  if (cost === 0) return '—';
+  if (cost === null || cost === undefined) return '—';
+  return '$' + cost.toFixed(2);
 }
 
 function generateReadmeTable(models) {
   const lines = [
-    '| Model | Context | Vision | Reasoning | Input $/M | Output $/M |',
-    '|-------|---------|--------|-----------|-----------|------------|',
+    '| Model | Context | Vision | Reasoning | Input $/M | Cache Read $/M | Output $/M |',
+    '|-------|---------|--------|-----------|-----------|-----------------|------------|',
   ];
 
   for (const model of models) {
@@ -356,9 +356,10 @@ function generateReadmeTable(models) {
     const vision = model.input.includes('image') ? '✅' : '❌';
     const reasoning = model.reasoning ? '✅' : '❌';
     const inputCost = formatCost(model.cost.input);
+    const cacheReadCost = formatCost(model.cost.cacheRead);
     const outputCost = formatCost(model.cost.output);
 
-    lines.push(`| ${model.name} | ${context} | ${vision} | ${reasoning} | ${inputCost} | ${outputCost} |`);
+    lines.push(`| ${model.name} | ${context} | ${vision} | ${reasoning} | ${inputCost} | ${cacheReadCost} | ${outputCost} |`);
   }
 
   return lines.join('\n');
@@ -442,6 +443,32 @@ function updateDeprecatedModels(modelsJsonPath, newModels) {
   }
 }
 
+/**
+ * Grace-period deprecated models (deprecatedAt within TTL) with metadata stripped.
+ * Keeps the README table serving models that are delisted but still within their
+ * 14-day grace window.
+ */
+function withDeprecatedForReadme(models) {
+  const deprecatedPath = path.join(path.dirname(MODELS_JSON_PATH), 'deprecated-models.json');
+  let deprecated = {};
+  try {
+    const parsed = JSON.parse(fs.readFileSync(deprecatedPath, 'utf8'));
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) deprecated = parsed;
+  } catch { /* no graveyard yet */ }
+  const now = Date.now();
+  const seen = new Set(models.map(m => m.id));
+  const extras = [];
+  for (const entry of Object.values(deprecated)) {
+    if (!entry || !entry.id || seen.has(entry.id)) continue;
+    const removedAt = Date.parse(entry.deprecatedAt || '');
+    if (Number.isNaN(removedAt) || now - removedAt > DEPRECATED_MODEL_TTL_MS) continue;
+    const m = { ...entry };
+    delete m.deprecatedAt;
+    extras.push(m);
+  }
+  return extras.length > 0 ? [...models, ...extras] : models;
+}
+
 async function main() {
   try {
     const apiModels = await fetchModels();
@@ -469,10 +496,13 @@ async function main() {
     updateDeprecatedModels(MODELS_JSON_PATH, models);
     saveJson(MODELS_JSON_PATH, models);
 
-    // Build full model list for README: base → patch → custom
+    // Build full model list for README: (base + grace-period deprecated) → patch → custom.
+    // Including active deprecated models keeps temporarily-delisted models listed until they
+    // are evicted permanently (mirrors the runtime withDeprecated grace window).
     const patchData = loadJson(PATCH_JSON_PATH);
     const customModels = loadJson(CUSTOM_MODELS_JSON_PATH);
-    const readmeModels = buildModels(models, Array.isArray(customModels) ? customModels : [], patchData);
+    const readmeBase = withDeprecatedForReadme(models);
+    const readmeModels = buildModels(readmeBase, Array.isArray(customModels) ? customModels : [], patchData);
     readmeModels.sort((a, b) => a.name.localeCompare(b.name));
 
     // Update README

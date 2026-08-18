@@ -40,7 +40,9 @@
     "deprecated-models.json",
     "custom-models.json",
     "patch.json",
-    "scripts/update-models.js"
+    "scripts/update-models.js",
+    "README.md",
+    "LICENSE"
   ],
   "pi": {
     "extensions": [
