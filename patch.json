@@ -57,6 +57,22 @@
       "requiresReasoningContentOnAssistantMessages": true
     }
   },
+  "deepseek-ai/DeepSeek-V4-Pro-0813": {
+    "thinkingLevelMap": {
+      "off": "none",
+      "minimal": "minimal",
+      "low": "low",
+      "medium": "medium",
+      "high": "high",
+      "xhigh": "xhigh",
+      "max": "max"
+    },
+    "compat": {
+      "thinkingFormat": "openai",
+      "supportsReasoningEffort": true,
+      "requiresReasoningContentOnAssistantMessages": true
+    }
+  },
   "zai-org/GLM-5.2": {
     "thinkingLevelMap": {
       "off": "none",
@@ -74,6 +90,38 @@
     }
   },
   "zai-org/GLM-5.2-Fast": {
+    "thinkingLevelMap": {
+      "off": "none",
+      "minimal": null,
+      "low": null,
+      "medium": null,
+      "high": "high",
+      "xhigh": null,
+      "max": "max"
+    },
+    "compat": {
+      "thinkingFormat": "openai",
+      "supportsReasoningEffort": true,
+      "requiresReasoningContentOnAssistantMessages": true
+    }
+  },
+  "zai-org/GLM-5.3": {
+    "thinkingLevelMap": {
+      "off": "none",
+      "minimal": null,
+      "low": null,
+      "medium": null,
+      "high": "high",
+      "xhigh": null,
+      "max": "max"
+    },
+    "compat": {
+      "thinkingFormat": "openai",
+      "supportsReasoningEffort": true,
+      "requiresReasoningContentOnAssistantMessages": true
+    }
+  },
+  "zai-org/GLM-5.3-Flash": {
     "thinkingLevelMap": {
       "off": "none",
       "minimal": null,
