@@ -26,6 +26,7 @@ Run `bun run test:pi` for offline manifest, catalog, lifecycle and streaming che
 - **Reasoning Models** — Extended thinking via `reasoning_content` field
 - **Vision Support** — Image input on Kimi K2.5 and Kimi K2.6
 - **Reasoning Effort** — Control reasoning depth on GPT OSS 120B
+- **Quiet live model sync** — Models refresh from the Baseten API in the background, at most hourly and by one pi process at a time ([details](#model-sync))
 
 ## Installation
 
@@ -128,6 +129,7 @@ Get your API key at [app.baseten.co/settings/api_keys](https://app.baseten.co/se
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `BASETEN_API_KEY` | No | Your Baseten API key (fallback if not in auth.json) |
+| `PI_PROVIDER_SYNC_TTL_MS` | No | Model sync freshness window in ms (default `3600000`; `0` = revalidate every session start) |
 
 ## Configuration
 
@@ -165,6 +167,20 @@ The `patch.json` file contains overrides that are applied on top of `models.json
 The `custom-models.json` file contains full model definitions for models that need manual curation beyond what the API provides, or models not yet available from the API. These are merged in after patch application, taking precedence for matching IDs.
 
 Merge order: `[live|cache|embedded] → patch.json → custom-models.json`
+
+## Model sync
+
+Startup never waits on the network. pi starts with the cached catalog (`~/.pi/agent/cache/baseten-models.json`,
+falling back to the bundled `models.json`) and revalidates against `/v1/models` in the background — only when:
+
+- a Baseten API key is configured (no key, no request),
+- the cache is older than 1 hour, missing, or was fetched with a different API key, and
+- no other pi process is already refreshing it (a `baseten-models.lock` file next to the cache).
+
+So `/new`, `/reload`, `pi -p` and fan-out child agents share one cache instead of each calling the API; a
+session that skips the fetch still picks up a cache another process refreshed. A failed refresh is retried after
+5 minutes at the earliest. `PI_PROVIDER_SYNC_TTL_MS` changes the window (`0` revalidates on every session start).
+Only a hash fingerprint of the key is stored (`baseten-models.sync.json`), never the key itself.
 
 ## Updating Models
 
