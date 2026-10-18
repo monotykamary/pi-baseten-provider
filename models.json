@@ -89,6 +89,52 @@
     }
   },
   {
+    "id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+    "name": "DeepSeek V4.1 Flash 1017",
+    "reasoning": true,
+    "input": [
+      "text",
+      "image"
+    ],
+    "cost": {
+      "input": 0.3,
+      "output": 1.2,
+      "cacheRead": 0.007,
+      "cacheWrite": 0
+    },
+    "contextWindow": 1048576,
+    "maxTokens": 262144,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    }
+  },
+  {
+    "id": "deepseek-ai/DeepSeek-V4.1-Flash-1017-Fast",
+    "name": "DeepSeek V4.1 Flash 1017 Fast",
+    "reasoning": true,
+    "input": [
+      "text",
+      "image"
+    ],
+    "cost": {
+      "input": 0.6,
+      "output": 2.4,
+      "cacheRead": 0.014,
+      "cacheWrite": 0
+    },
+    "contextWindow": 1048576,
+    "maxTokens": 262144,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    }
+  },
+  {
     "id": "deepseek-ai/DeepSeek-V4.1-Flash-Fast",
     "name": "DeepSeek V4.1 Flash Fast",
     "reasoning": true,
