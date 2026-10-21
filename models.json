@@ -7,9 +7,9 @@
       "text"
     ],
     "cost": {
-      "input": 1.3,
-      "output": 4.3,
-      "cacheRead": 0.13,
+      "input": 0.4,
+      "output": 1.2,
+      "cacheRead": 0.04,
       "cacheWrite": 0
     },
     "contextWindow": 1048576,
