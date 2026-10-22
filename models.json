@@ -158,6 +158,27 @@
     }
   },
   {
+    "id": "decision-models/baseten-elephant-9b-latest",
+    "name": "elephant-1",
+    "reasoning": false,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 16384,
+    "maxTokens": 16384,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens"
+    }
+  },
+  {
     "id": "zai-org/GLM-5.2",
     "name": "GLM 5.2",
     "reasoning": true,
@@ -293,6 +314,27 @@
       "supportsStore": false,
       "maxTokensField": "max_completion_tokens",
       "thinkingFormat": "openai"
+    }
+  },
+  {
+    "id": "decision-models/baseten-mammoth-27b-latest",
+    "name": "mammoth-1",
+    "reasoning": false,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 16384,
+    "maxTokens": 16384,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens"
     }
   },
   {
