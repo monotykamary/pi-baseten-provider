@@ -162,7 +162,8 @@
     "name": "elephant-1",
     "reasoning": false,
     "input": [
-      "text"
+      "text",
+      "image"
     ],
     "cost": {
       "input": 0,
@@ -321,7 +322,8 @@
     "name": "mammoth-1",
     "reasoning": false,
     "input": [
-      "text"
+      "text",
+      "image"
     ],
     "cost": {
       "input": 0,
