@@ -295,6 +295,28 @@
     }
   },
   {
+    "id": "decision-models/baseten-joey-2b-latest",
+    "name": "joey-1",
+    "reasoning": false,
+    "input": [
+      "text",
+      "image"
+    ],
+    "cost": {
+      "input": 0.01,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 16384,
+    "maxTokens": 16384,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens"
+    }
+  },
+  {
     "id": "moonshotai/Kimi-K3",
     "name": "Kimi K3",
     "reasoning": true,
