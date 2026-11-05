@@ -340,6 +340,29 @@
     }
   },
   {
+    "id": "moonshotai/Kimi-K3.1-Pro",
+    "name": "Kimi K3.1 Pro",
+    "reasoning": true,
+    "input": [
+      "text",
+      "image"
+    ],
+    "cost": {
+      "input": 2,
+      "output": 10,
+      "cacheRead": 0.2,
+      "cacheWrite": 0
+    },
+    "contextWindow": 1000000,
+    "maxTokens": 262144,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens",
+      "thinkingFormat": "openai"
+    }
+  },
+  {
     "id": "decision-models/baseten-mammoth-27b-latest",
     "name": "mammoth-1",
     "reasoning": false,
