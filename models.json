@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "decision-models/baseten-bison-latest",
+    "name": "bison-1",
+    "reasoning": false,
+    "input": [
+      "text",
+      "image"
+    ],
+    "cost": {
+      "input": 0.1,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 32768,
+    "maxTokens": 32768,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens"
+    }
+  },
+  {
     "id": "deepseek-ai/DeepSeek-V4-Flash-0731",
     "name": "Deepseek V4 Flash 0731",
     "reasoning": true,
@@ -292,6 +314,28 @@
       "supportsStore": false,
       "maxTokensField": "max_completion_tokens",
       "thinkingFormat": "openai"
+    }
+  },
+  {
+    "id": "decision-models/baseten-groundhog-latest",
+    "name": "groundhog-1",
+    "reasoning": false,
+    "input": [
+      "text",
+      "image"
+    ],
+    "cost": {
+      "input": 0.035,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 16384,
+    "maxTokens": 16384,
+    "compat": {
+      "supportsDeveloperRole": true,
+      "supportsStore": false,
+      "maxTokensField": "max_completion_tokens"
     }
   },
   {
